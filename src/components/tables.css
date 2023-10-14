@@ -1,0 +1,40 @@
+table,
+th,
+td {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+th,
+td {
+    padding: 15px 10px;
+}
+
+table tbody:nth-child(odd), table thead {
+    background-color: #f0f4fa;
+
+}
+table {
+    width: 100%;
+
+}
+.data-table {
+    width: 100%;
+    overflow-x: auto;
+}
+.table {  
+    width: 85vw;
+    margin: auto;
+    padding: 20px;
+    height: fit-content;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px 1px #f0f4fad9;
+}
+
+
