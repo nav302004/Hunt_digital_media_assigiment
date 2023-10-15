@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom";
+import "./modal.css"
 const Overlay = () => {
     return (
         <div className="overlay">
@@ -9,7 +10,7 @@ const Overlay = () => {
 const Modaloverlay = (props) => {
     return (
         <div className="modal">
-            <h1>Hello owrld </h1>
+            {props.children}
         </div>
     )
 }

@@ -1,0 +1,106 @@
+header {
+    border-bottom: 0.5px solid rgba(128, 128, 128, 0.523);
+    padding: 10px 0px ;
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 0px ;
+    border-top: 0.5px solid rgba(128, 128, 128, 0.523);
+}
+
+.modalcontainer p {
+    margin: 2px 0px ;
+}
+
+.modalcontainer {
+    width: 40vw;
+}
+
+
+.date_container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.input_container {
+    margin: 10px 0px ;
+}
+.input_container input {
+    padding: 5px;
+    width:18vw ;
+    font-family: inherit;
+    border: 1px solid rgba(0, 0, 0, 0.741);
+    border-radius: 5px;
+}
+
+.adddate {
+    width: 60px;
+    height: 25px;
+    background-color: transparent;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 15px;
+    border: 2px solid #164ba166;
+    color: grey;
+    margin-top: 10px;
+}
+footer button {
+    width: fit-content;
+    padding: 10px;
+    margin-left: 10px;
+    border: none;
+    font-size: medium;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+}
+footer button:nth-child(1) {
+    background-color: transparent;
+}
+footer button:nth-child(1):hover {
+    background-color: #164ba11b;
+}
+footer button:nth-child(2) {
+    background-color: #164ba1;
+    color: white;
+}
+
+
+@media screen and (max-width: 760px) {
+    .modalcontainer {
+        width: 60vw;
+    }
+    .input_container input {
+        width:26vw ;
+    }
+}
+@media screen and (max-width: 460px) {
+    .modalcontainer {
+        width: 80vw;
+    }
+    .input_container input {
+        width:34vw ;
+    }
+}
+
+.excludeddateshow {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.excludeddateshow small {
+    display: inline-block;
+    width: fit-content;
+    border: 1px solid #164ba166;
+    color: grey;
+    padding: 3px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    margin-right: 4px;
+    cursor: pointer;
+}

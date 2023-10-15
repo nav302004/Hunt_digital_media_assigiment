@@ -11,23 +11,27 @@ th {
 }
 
 th,
-td {
+td ,.sticky_prop{
     padding: 15px 10px;
 }
 
-table tbody:nth-child(odd), table thead {
+table tbody tr:nth-child(even),
+table thead {
     background-color: #f0f4fa;
 
 }
+
 table {
     width: 100%;
 
 }
+
 .data-table {
     width: 100%;
     overflow-x: auto;
 }
-.table {  
+
+.table {
     width: 85vw;
     margin: auto;
     padding: 20px;
@@ -35,6 +39,20 @@ table {
     border: 0.5px solid black;
     border-radius: 10px;
     box-shadow: 4px 4px 5px 1px #f0f4fad9;
+    position: relative;
 }
-
-
+.sticky_prop {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 60px;
+    border-right: 1px solid black;
+}
+table tbody tr .sticky_prop:nth-child(odd) ,table thead .sticky_prop{
+    background-color:#f0f4fa;
+}
+@media screen and (max-width: 760px) {
+    .sticky_prop {
+        width: 100px;
+    }
+}

@@ -10,15 +10,15 @@ const Table = () => {
                 {/* Utility contains heading as well as new entry button  */}
                 <Utility />
 
-                {/* Table were all the data shown */}
+                {/* Table where all the data shown */}
                 <div className="data-table">
 
                     <table>
                         <thead>
                             <tr>
                                 {/* All the table headers  */}
+                                <th className="sticky_prop" >ID</th>
                                 <th>Action</th>
-                                <th>ID</th>
                                 <th>Start date</th>
                                 <th>End date</th>
                                 <th>Month,Year</th>
@@ -32,8 +32,8 @@ const Table = () => {
                         </thead>
                         <tbody>
                             <tr>
+                                <td className="sticky_prop" >12</td>
                                 <td>Pending</td>
-                                <td>12</td>
                                 <td>12/23/3444</td>
                                 <td>xx/xx/xxxx</td>
                                 <td>12,1212</td>
@@ -44,11 +44,35 @@ const Table = () => {
                                 <td>12/12/1212</td>
                                 <td>xx XX</td>
                             </tr>
-                        </tbody>
-                        <tbody>
                             <tr>
+                                <td className="sticky_prop" >12</td>
                                 <td>Pending</td>
+                                <td>12/23/3444</td>
+                                <td>xx/xx/xxxx</td>
+                                <td>12,1212</td>
+                                <td>12/34/1221  1212/232/32</td>
                                 <td>12</td>
+                                <td>12</td>
+                                <td>1200</td>
+                                <td>12/12/1212</td>
+                                <td>xx XX</td>
+                            </tr>
+                            <tr>
+                                <td className="sticky_prop" >12</td>
+                                <td>Pending</td>
+                                <td>12/23/3444</td>
+                                <td>xx/xx/xxxx</td>
+                                <td>12,1212</td>
+                                <td>12/34/1221  1212/232/32</td>
+                                <td>12</td>
+                                <td>12</td>
+                                <td>1200</td>
+                                <td>12/12/1212</td>
+                                <td>xx XX</td>
+                            </tr>
+                            <tr>
+                                <td className="sticky_prop" >12</td>
+                                <td>Pending</td>
                                 <td>12/23/3444</td>
                                 <td>xx/xx/xxxx</td>
                                 <td>12,1212</td>
