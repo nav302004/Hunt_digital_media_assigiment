@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Hunt_digital_media_assigiment/static/css/main.a62b6b0b.css",
+    "main.js": "/Hunt_digital_media_assigiment/static/js/main.54a7e67f.js",
+    "static/js/787.243390a8.chunk.js": "/Hunt_digital_media_assigiment/static/js/787.243390a8.chunk.js",
+    "static/media/Pretendard-Light.otf": "/Hunt_digital_media_assigiment/static/media/Pretendard-Light.2cb5a195aebe2c6b471f.otf",
+    "index.html": "/Hunt_digital_media_assigiment/index.html",
+    "main.a62b6b0b.css.map": "/Hunt_digital_media_assigiment/static/css/main.a62b6b0b.css.map",
+    "main.54a7e67f.js.map": "/Hunt_digital_media_assigiment/static/js/main.54a7e67f.js.map",
+    "787.243390a8.chunk.js.map": "/Hunt_digital_media_assigiment/static/js/787.243390a8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a62b6b0b.css",
+    "static/js/main.54a7e67f.js"
+  ]
+}
