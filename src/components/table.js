@@ -52,7 +52,7 @@ const Table = () => {
                                             <td>{entry.startdate ? entry.startdate:"-"}</td>
                                             <td>{entry.enddate ? entry.enddate :"-"}</td>
                                             <td>{entry.monthYear ? entry.monthYear :"-"}</td>
-                                            <td>{entry.excludingdate.map(excl => excl)}</td>
+                                            <td>{entry.excludingdate.map(excl => `${excl}/`)}</td>
                                             <td>{entry.numbersofday ? entry.numbersofday :"-"}</td>
                                             <td>{entry.leadcount ? entry.leadcount :"-"}</td>
                                             <td>{Math.round(entry.leadcount / entry.numbersofday)}</td>
