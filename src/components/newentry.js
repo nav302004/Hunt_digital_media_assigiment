@@ -2,12 +2,12 @@ import { useState, useRef } from "react";
 import Modal from "../UI/Modal"
 import "./newentry.css"
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai"; // for plus icon
+import {useDispatch} from "react-redux"
+import {dataActions} from "../store/index"
 
 const FormnewEntry = (props) => {
-    const submitHandler = (e) => {
-        alert("working")
-        e.preventDefault()
-    }
+    // Default disptch func setting
+    const dispatch = useDispatch()
 
     // Extracting the current date 
     const date = new Date();
@@ -17,7 +17,7 @@ const FormnewEntry = (props) => {
 
 
 
-    
+
     // chnaging the minium date for end date. The date as the user chnage the start date 
     const [miniumdate, setminiumdate] = useState(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() + 1}`);
     const [enddate, setenddate] = useState("")
@@ -50,8 +50,49 @@ const FormnewEntry = (props) => {
         setexcludedDates(newdates)
     }
 
-    // calcuation for number of days 
+    // Lead count input handler
+    const leadcountRef = useRef("")
 
+    // calcuation for number of days 
+    let numberofday  = 0
+    const numberofdays = () => {
+        let date1 = new Date(miniumdate)
+        let date2 = new Date(enddate)
+        const diffTime = Math.abs(date2 - date1);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        numberofday = (diffDays+1) - excludedDates.length
+        
+    }
+    numberofdays()
+
+
+    const submitHandler = (e) => {
+        const date = new Date()
+        e.preventDefault()
+        let usernewentrydata ={
+            startdate: miniumdate , 
+            enddate : enddate,
+            excludingdate:excludedDates,
+            leadcount:leadcountRef.current.value,
+            monthYear:miniumdate.slice(0, 7).replace("-", ","),
+            numbersofday:numberofday,
+            lastUpdated:{
+                date:`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`,
+                time:`${date.getHours()}:${date.getMinutes()}`
+            },
+        } 
+        // console.log({
+        //     startdate: miniumdate , 
+        //     enddate : enddate,
+        //     excludingdate:excludedDates,
+        //     leadcount:leadcountRef.current.value,
+        //     monthYear:miniumdate.slice(0, 7).replace("-", ","),
+        //     numbersofday:numberofday,
+        //     lastUpdated:date,
+        // })
+        dispatch(dataActions.addtodata(usernewentrydata))
+        props.tooglechange()
+    }
 
     return (
         <Modal>
@@ -82,16 +123,17 @@ const FormnewEntry = (props) => {
                         </div>
                         <div className="input_container" >
                             <p>Lead Count</p>
-                            <input type="number" defaultValue="1" />
+                            <input type="number" defaultValue="1" ref={leadcountRef} />
                         </div>
                     </div>
                     <div className="excludeddateshow"  >
-                        {excludedDates.map((date) => <small key={Math.random()} onClick={excludeddateminusHandler.bind(null,date)}  > <AiOutlineMinusCircle /> {date}</small>)}
+                        {excludedDates.map((date) => <small key={Math.random()} onClick={excludeddateminusHandler.bind(null, date)}  > <AiOutlineMinusCircle /> {date}</small>)}
                     </div>
                     <div className="autocompletedinfo">
                         <p>Auto complted details  </p>
-                        <small>Year,Month : {miniumdate.slice(0,7).replace("-",",")}</small>
-                        <small>Number of Days : </small>
+                        <small>Year,Month : {miniumdate.slice(0, 7).replace("-", ",")}</small>
+                        <br />
+                        <small>Number of Days : {numberofday}</small>
                     </div>
                 </main>
                 <footer>

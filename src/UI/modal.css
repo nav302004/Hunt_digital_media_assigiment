@@ -6,24 +6,23 @@
     top: 0;
     left: 0;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
     z-index: 10;
-    transform: translate(-50% , -50%);
     border-radius: 20px;
     padding: 10px 20px;
     background-color: white;
-    animation: trans linear 0.2s;
-    transition: 0.2s ease-in-out ;
+    animation: trans ease-in-out 0.15s;
+    transition: 0.15s ease-in-out ;
 }
 @keyframes trans{
     0% {
-        transform: translate(-50%,-200%);
+        transform: scaleY(0);
     }
     100% {
-        transform: translate(-50%,-50%);
+        transform: scaleY(1);
     }
 }
